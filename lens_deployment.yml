@@ -1,4 +1,3 @@
----
 version: v1alpha
 name: "sales-intelligence"
 layer: user
@@ -16,8 +15,8 @@ lens:
     name: system
     catalog: icebase
   repo:
-    url: https://bitbucket.org/rubik_/solutions
-    lensBaseDir: solutions/customer-solution-demo/new-balance-sales-dp-demo/output/lens2/sales360/model
+    url: https://github.com/Aayushitmdc/Lens2
+    lensBaseDir: /Lens2/model
     syncFlags:
       - --ref=refactor-demos
   api:   # optional
