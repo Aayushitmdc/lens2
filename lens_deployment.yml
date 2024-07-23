@@ -15,8 +15,8 @@ lens:
     name: system
     catalog: icebase
   repo:
-    url: https://github.com/Aayushitmdc/Lens2
-    lensBaseDir: /Lens2/model
+    url: https://github.com/Aayushitmdc/lens2
+    lensBaseDir: /lens2/model
     syncFlags:
       - --ref=refactor-demos
   api:   # optional
