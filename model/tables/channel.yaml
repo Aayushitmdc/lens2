@@ -1,0 +1,81 @@
+tables:
+  - name: channel
+    sql: {{ load_sql('channel') }}
+    description: Table containing information about channel records.
+
+
+    
+    dimensions:       
+      - name: store_id
+        type: string
+        description: Unique identifier for each store.
+        sql: store_id
+        primary_key : true
+        public : true         
+      
+      - name: store_name
+        type: string
+        description: The name of the store.
+        sql: store_name
+      
+      - name: store_address
+        type: string
+        description: The address of the store.
+        sql: store_address
+      
+      - name: store_contact_email
+        type: string
+        description: The contact email for the store.
+        sql: store_contact_email
+      
+      - name: store_contact_phone
+        type: string
+        description: The contact phone number for the store.
+        sql: store_contact_phone
+      
+      - name: platform_name
+        type: string
+        description: The name of the platform.
+        sql: platform_name
+      
+      - name: platform_url
+        type: string
+        description: The URL of the platform.
+        sql: platform_url
+      
+      - name: country
+        type: string
+        description: The country where the store is located.
+        sql: country
+      
+      - name: currency
+        type: string
+        description: The currency used by the store.
+        sql: currency
+      
+      - name: channel_type
+        type: string
+        description: The type of channel (e.g., online, offline).
+        sql: channel_type
+      
+      - name: nearest_offline_store
+        type: string
+        description: The nearest offline store to the current store.
+        sql: nearest_offline_store
+          
+
+    measures:
+      
+      - name: total_stores
+        sql: store_id
+        type: count_distinct
+        description: Total number of stores available
+
+
+      
+      
+    
+      
+      
+      
+     
