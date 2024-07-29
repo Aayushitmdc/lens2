@@ -3,8 +3,6 @@ tables:
     sql: {{ load_sql('channel') }}
     description: Table containing information about channel records.
 
-
-    
     dimensions:       
       - name: store_id
         type: string
@@ -64,18 +62,24 @@ tables:
         sql: nearest_offline_store
           
 
-    measures:
-      
+    measures: 
       - name: total_stores
         sql: store_id
         type: count_distinct
         description: Total number of stores available
 
 
+    # pre_aggregations:
+    #   - name: store_details
+    #     measures:
+    #       - channel.total_stores
+    #     dimensions:
+    #       - channel.store_name
+    #       - channel.store_contact_email
+    #     refresh_key:
+    #       every: 1 hour
+ 
       
       
-    
-      
-      
-      
+
      

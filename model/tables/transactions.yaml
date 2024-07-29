@@ -7,9 +7,9 @@ tables:
         relationship: many_to_one
         sql: "{TABLE.skuid}= {products.skuid}"   
 
-      - name: channel
-        relationship: many_to_one
-        sql: "{TABLE.store_id}= {channel.store_id}"           
+      # - name: channel
+      #   relationship: many_to_one
+      #   sql: "{TABLE.store_id}= {channel.store_id}"           
     dimensions:
       - name: transaction_id
         type: string
@@ -153,10 +153,10 @@ tables:
         description: Category of shipping cost based on the amount
 
 
-      - name: store_id
-        type: string
-        description: The stock-keeping unit identifier.
-        sql: store_id
+      # - name: store_id
+      #   type: string
+      #   description: The stock-keeping unit identifier.
+      #   sql: store_id
      
       
     measures:
@@ -224,8 +224,18 @@ tables:
         public: true      
         sql: "{TABLE}.payment_method = 'PayPal'"        
 
+    pre_aggregations:
+      - name: orders_by_status
+        measures:
+          - total_transactions  # This measure counts the total number of transactions
+        dimensions:
+          - order_status  # This dimension is used to group by order status
+        time_dimension: transaction_date  # Time dimension used for granularity (if needed)
+        granularity: day  # Granularity at which data will be pre-aggregated
 
+      
 
+    
       # - name: total_discount_percentage
       #   sql: AVG(discount_percentage)
       #   type: number
@@ -239,3 +249,5 @@ tables:
     #       - payment_method
     #     refresh_key:
     #       every: 1 day     
+
+

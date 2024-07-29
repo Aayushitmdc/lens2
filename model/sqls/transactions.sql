@@ -18,7 +18,6 @@ SELECT
   promo_code,
   shipping_method,
   order_status,
-  skuid,
-  store_id
+  skuid 
 FROM
   "icebase"."sales_360".transactions

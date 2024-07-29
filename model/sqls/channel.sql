@@ -1,4 +1,4 @@
 SELECT
   *
 FROM
-  "bigquery"."sales_360".channel
+  "icebase"."sales_360".channel
