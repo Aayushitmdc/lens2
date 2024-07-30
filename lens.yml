@@ -11,17 +11,17 @@ description: sales360 lens2 deployment on DataOS # Lens Resource description (op
 lens:
   compute: runnable-default # Compute Resource that Lens should utilize (mandatory)
   secrets: # Referred Instance-secret configuration (**mandatory for private code repository, not required for public repository)
-    - name: bitbucket-r # Referred Instance Secret name (mandatory)
+    - name: githubr # Referred Instance Secret name (mandatory)
       allKeys: true # All keys within the secret are required or not (optional)
   source: # Data Source configuration
     type: minerva # Source type 
     name: system # Source name
     catalog: icebase #in case of minerva or themis
   repo: # Lens2 model code repository configuration (mandatory)
-    url: https://bitbucket.org/rubik_/customize-solutions # URL of repository containing the Lens2 model (mandatory)
-    lensBaseDir: customize-solutions/lens2/sales360/model # Relative path of the Lens2 'model' directory in repository (mandatory)
+    url: https://github.com/Aayushitmdc/lens2/ # URL of repository containing the Lens2 model (mandatory)
+    lensBaseDir: Aayushitmdc/lens2/tree/main/model # Relative path of the Lens2 'model' directory in repository (mandatory)
     syncFlags: # Additional flags used during synchronization, such as specific branch.
-      - --ref=lens2 # Repository Branch 
+      - --ref=main # Repository Branch 
   api: # API Instances configuration (optional)
     replicas: 1 # Number of API instance replicas (optional)
     logLevel: info  # Logging granularity (optional)
@@ -52,11 +52,13 @@ lens:
         cpu: 6000m
         memory: 6048Mi
   iris:
-	  logLevel: info
-    resources: # CPU and memory resource specifications for the iris board (optional)
+    logLevel: info
+    replicas: 1
+    resources:
       requests:
         cpu: 100m
         memory: 256Mi
       limits:
-        cpu: 6000m
-        memory: 6048Mi
+        cpu: 4000m
+        memory: 5240Mi
+
