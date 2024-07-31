@@ -45,11 +45,11 @@ views:
           - designername
           - productid
 
-      - join_path: channel
-        prefix: true
-        includes:
-          - store_name
-          - channel_type
-          - total_stores
+      # - join_path: channel
+      #   prefix: true
+      #   includes:
+      #     - store_name
+      #     - channel_type
+      #     - total_stores
         
 

@@ -7,9 +7,9 @@ tables:
         relationship: many_to_one
         sql: "{TABLE.skuid}= {products.skuid}"   
 
-      # - name: channel
-      #   relationship: many_to_one
-      #   sql: "{TABLE.store_id}= {channel.store_id}"           
+      - name: channel
+        relationship: many_to_one
+        sql: "{TABLE.store_id}= {channel.store_id}"           
     dimensions:
       - name: transaction_id
         type: string

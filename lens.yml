@@ -19,7 +19,7 @@ lens:
     catalog: icebase #in case of minerva or themis
   repo: # Lens2 model code repository configuration (mandatory)
     url: https://github.com/Aayushitmdc/lens2/ # URL of repository containing the Lens2 model (mandatory)
-    lensBaseDir: Aayushitmdc/lens2/tree/main/model # Relative path of the Lens2 'model' directory in repository (mandatory)
+    lensBaseDir: lens2/model # Relative path of the Lens2 'model' directory in repository (mandatory)
     syncFlags: # Additional flags used during synchronization, such as specific branch.
       - --ref=main # Repository Branch 
   api: # API Instances configuration (optional)
