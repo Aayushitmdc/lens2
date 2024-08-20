@@ -27,18 +27,17 @@ views:
           - transaction_id
           - total_revenue
           - transaction_amount
-          - average_transaction_amount
-          - transaction_date
-          - order_id
+          #- average_transaction_amount
+          #- transaction_date
+          #- order_id
           - payment_method
-          - transaction_type
           - skuid
           - shipping_amount
           - order_total_amount
           - shipping_method
           - discount_applied
           - discounted_amount
-          - customer_id
+          - order_status
 
       - join_path: products
         prefix: true

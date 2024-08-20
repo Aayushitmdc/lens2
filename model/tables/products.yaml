@@ -70,8 +70,7 @@ tables:
         type: string
         description: Model of the product.
         sql: model
-      
-
+  
     measures:
       
       - name: total_products
