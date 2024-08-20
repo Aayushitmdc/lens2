@@ -172,6 +172,7 @@ tables:
       - name: loyal_customers
         public: true
         sql: "{TABLE}.degree_of_loyalty = 'Hard Core Loyals' " 
+        
         meta:
           secure:
             user_groups: 

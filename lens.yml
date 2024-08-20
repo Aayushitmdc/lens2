@@ -25,6 +25,9 @@ lens:
   api: # API Instances configuration (optional)
     replicas: 1 # Number of API instance replicas (optional)
     logLevel: info  # Logging granularity (optional)
+    envs:
+      LENS2_SCHEDULED_REFRESH_TIMEZONES: "UTC,America/Vancouver,America/Toronto"
+      LENS2_SOURCE_WORKSPACE_NAME: public
     resources: # CPU and memory configurations for API Instances (optional)
       requests:
         cpu: 100m
@@ -35,6 +38,9 @@ lens:
   worker: # Worker configuration (optional)
     replicas: 2 # Number of Worker replicas (optional)
     logLevel: info # Logging level (optional)
+    envs:
+      LENS2_SCHEDULED_REFRESH_TIMEZONES: "UTC,America/Vancouver,America/Toronto"
+      LENS2_SOURCE_WORKSPACE_NAME: public
     resources: # CPU and memory configurations for Worker (optional)
       requests:
         cpu: 100m
@@ -44,6 +50,9 @@ lens:
         memory: 6048Mi
   router: # Router configuration (optional)
     logLevel: info  # Level of log detail (optional)
+    envs:
+      LENS2_SCHEDULED_REFRESH_TIMEZONES: "UTC,America/Vancouver,America/Toronto"
+      LENS2_SOURCE_WORKSPACE_NAME: public
     resources: # CPU and memory resource specifications for the router (optional)
       requests:
         cpu: 100m
