@@ -33,6 +33,9 @@ views:
           - payment_method
           - transaction_type
           - skuid
+          - shipping_amount
+          - order_total_amount
+          - shipping_method
           - discount_applied
           - discounted_amount
           - customer_id
