@@ -224,14 +224,14 @@ tables:
         public: true      
         sql: "{TABLE}.payment_method = 'PayPal'"        
 
-    pre_aggregations:
-      - name: orders_by_status
-        measures:
-          - total_transactions  # This measure counts the total number of transactions
-        dimensions:
-          - order_status  # This dimension is used to group by order status
-        time_dimension: transaction_date  # Time dimension used for granularity (if needed)
-        granularity: day  # Granularity at which data will be pre-aggregated
+    # pre_aggregations:
+    #   - name: orders_by_status
+    #     measures:
+    #       - total_transactions  # This measure counts the total number of transactions
+    #     dimensions:
+    #       - order_status  # This dimension is used to group by order status
+    #     time_dimension: transaction_date  # Time dimension used for granularity (if needed)
+    #     granularity: day  # Granularity at which data will be pre-aggregated
 
       
 
