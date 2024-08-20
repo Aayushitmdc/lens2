@@ -25,27 +25,28 @@ views:
         includes:
           - total_transactions
           - transaction_id
-          - total_revenue
-          - transaction_amount
+          # - total_revenue
+          # - transaction_amount
           #- average_transaction_amount
           #- transaction_date
           #- order_id
-          - payment_method
-          - skuid
-          - shipping_amount
-          - order_total_amount
-          - shipping_method
-          - discount_applied
-          - discounted_amount
-          - order_status
+          # - payment_method
+          # - skuid
+          # - shipping_amount
+          # - order_total_amount
+          # - shipping_method
+          # - discount_applied
+          # - discounted_amount
+          # - order_status
 
-      - join_path: products
-        prefix: true
-        includes:
-          - productname
-          - productcategory
-          - designername
-          - productid
+      # - join_path: products
+      #   prefix: true
+      #   includes:
+      #     - productname
+      #     - productcategory
+      #     - designername
+      #     - productid
+          
 
       # - join_path: channel
       #   prefix: true
