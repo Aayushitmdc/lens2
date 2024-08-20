@@ -1,5 +1,5 @@
 tables:
-  - name: transaction
+  - name: transactions
     sql: {{ load_sql('transactions') }}
     description: Table containing information about customer records.
     joins:
