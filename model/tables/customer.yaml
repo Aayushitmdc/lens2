@@ -157,18 +157,6 @@ tables:
         description: Average age of the customers
 
     segments:
-      # - name: minor_age_customer
-      #   public: true      
-      #   sql: "{TABLE}.age_group = 'Under 18'"
-      #   meta:
-      #     secure:
-      #       user_groups: 
-      #         includes:
-      #           - default
-      #         excludes:
-      #           - type_analyst      
-
-
       - name: loyal_customers
         public: true
         sql: "{TABLE}.degree_of_loyalty = 'Hard Core Loyals' " 
