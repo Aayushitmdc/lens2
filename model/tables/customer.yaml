@@ -5,7 +5,7 @@ tables:
     description: Table containing information about customer records.
     
     joins:
-      - name: transaction
+      - name: transactions
         relationship: one_to_many
         sql: "{TABLE.customer_id} = {transaction.customer_id}"
 
