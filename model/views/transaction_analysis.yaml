@@ -5,7 +5,7 @@ views:
     meta:
       export_to_iris: true
       iris:
-        timeseries: transactions.transaction_date
+        timeseries: transaction.transaction_date
         available_time_zones:
           - America/Los_Angeles
           - America/Chicago
@@ -20,33 +20,30 @@ views:
           - Australia/Sydney
 
     tables:
-      - join_path: transactions
+      - join_path: transaction
         prefix: true
         includes:
           - total_transactions
           - transaction_id
-          # - total_revenue
-          # - transaction_amount
-          #- average_transaction_amount
-          #- transaction_date
-          #- order_id
-          # - payment_method
-          # - skuid
-          # - shipping_amount
-          # - order_total_amount
-          # - shipping_method
-          # - discount_applied
-          # - discounted_amount
-          # - order_status
+          - total_revenue
+          - transaction_amount
+          - average_transaction_amount
+          - transaction_date
+          - order_id
+          - payment_method
+          - transaction_type
+          - skuid
+          - discount_applied
+          - discounted_amount
+          - customer_id
 
-      # - join_path: products
-      #   prefix: true
-      #   includes:
-      #     - productname
-      #     - productcategory
-      #     - designername
-      #     - productid
-          
+      - join_path: products
+        prefix: true
+        includes:
+          - productname
+          - productcategory
+          - designername
+          - productid
 
       # - join_path: channel
       #   prefix: true
