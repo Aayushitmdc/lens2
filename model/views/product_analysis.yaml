@@ -21,7 +21,7 @@ views:
 
     tables:
       - join_path: products
-        prefix: true
+        prefix: false
         includes:
           - productname
           - productcategory
