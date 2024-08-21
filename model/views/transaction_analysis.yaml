@@ -20,7 +20,7 @@ views:
           - Australia/Sydney
 
     tables:
-      - join_path: transaction
+      - join_path: transactions
         prefix: true
         includes:
           - total_transactions
