@@ -1,6 +1,6 @@
 SELECT
   transaction_id,
-  cast(customer_id AS varchar) AS customer_id,
+  customer_id,
   cast(transaction_date AS timestamp) AS transaction_date,
   order_id,
   transaction_amount,
@@ -18,6 +18,7 @@ SELECT
   promo_code,
   shipping_method,
   order_status,
-  skuid 
+  skuid,
+  store_id
 FROM
   "icebase"."sales_360".transactions

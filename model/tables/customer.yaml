@@ -5,9 +5,9 @@ tables:
     description: Table containing information about customer records.
     
     joins:
-      - name: transactions
+      - name: transaction
         relationship: one_to_many
-        sql: "{TABLE.customer_id} = {transactions.customer_id}"
+        sql: "{TABLE.customer_id} = {transaction.customer_id}"
 
     dimensions:
       - name: customer_id
@@ -172,7 +172,6 @@ tables:
       - name: loyal_customers
         public: true
         sql: "{TABLE}.degree_of_loyalty = 'Hard Core Loyals' " 
-        
         meta:
           secure:
             user_groups: 

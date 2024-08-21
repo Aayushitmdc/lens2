@@ -2,6 +2,9 @@ tables:
   - name: products
     sql: {{ load_sql('products') }}
     description: Table containing information about customer records.
+
+
+    
     dimensions:
        
       - name: productid
@@ -70,7 +73,8 @@ tables:
         type: string
         description: Model of the product.
         sql: model
-  
+      
+
     measures:
       
       - name: total_products
