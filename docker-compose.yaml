@@ -5,19 +5,20 @@ x-lens2-environment: &lens2-environment
   DATAOS_FQDN: liberal-donkey.dataos.app  
   # Overview
   LENS2_NAME: sales_analysis
-  LENS2_DESCRIPTION: "Ecommerce use case on Adventureworks sales data"
+  LENS2_DESCRIPTION: "Retail"
   LENS2_TAGS: "sales and customer insights"
-  LENS2_AUTHORS: "aayushisolanki, iamgroot"
+  LENS2_AUTHORS: nandapage
   LENS2_SOURCE_TYPE: minerva
   LENS2_SOURCE_NAME: system
   LENS2_SOURCE_CATALOG_NAME: icebase
-  DATAOS_RUN_AS_APIKEY: dG9rZW5fZ3JhdGVmdWxseV9ldmVubHlfb3Blbl9naWJib24uYzQ3MjAyNjItYTQ1ZC00MzM1LWE5ZjgtOGZjYWI2NDNjNzRlbWFydmVsLmU1MzJmMzE4LWNmYWYtNGRkMS1iNmNkLTEwN2ZlOTEzYzkzOQ==
+  DATAOS_RUN_AS_APIKEY: bXlhcGkuZmE0MDc1ZjctYTJlMS00MTcyLTkyNmYtMWNiMTAzYjBmMTk4
   # Log
   LENS2_LOG_LEVEL: error
-  CACHE_LOG_LEVEL: "error"
+  CACHE_LOG_LEVEL: error
   # Operation
-  LENS2_DEV_MODE: true   
-  LENS2_REFRESH_WORKER: true
+  
+  LENS2_DEV_MODE: "true"  
+  LENS2_REFRESH_WORKER: "true"
   LENS2_SCHEMA_PATH: model
   LENS2_PG_SQL_PORT: 5432
   CUBESTORE_DATA_DIR: "/var/work/.store"
@@ -25,7 +26,7 @@ x-lens2-environment: &lens2-environment
 services:
   api:
     restart: always
-    image: rubiklabs/lens2:0.35.41-05   #.41-05 or .18-50
+    image: rubiklabs/lens2:0.35.55-01   #.41-05 or .18-50
     ports:
       - 4000:4000
       - 25432:5432
