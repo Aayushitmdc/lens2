@@ -5,7 +5,7 @@ tables:
     description: Table containing information about customer records.
     
     joins:
-      - name: transaction
+      - name: transactions
         relationship: one_to_many
         sql: "{TABLE.customer_id} = {transaction.customer_id}"
 
@@ -51,6 +51,16 @@ tables:
         type: number
         description: Age of the customer.
         sql: age
+
+      - name: age_group  #test for logical change
+        type: string
+        sql: CASE
+              WHEN age < 18 THEN 'Under 18'
+              WHEN age BETWEEN 18 AND 35 THEN '18-35'
+              WHEN age BETWEEN 36 AND 50 THEN '36-50'
+              ELSE 'Above 50'
+            END
+        description: "Age group of the customer"
 
       - name: education_level
         type: string
