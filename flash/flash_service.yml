@@ -1,0 +1,29 @@
+name: flash-service
+version: v1
+type: service
+tags:
+  - service
+description: Flash service
+workspace: public
+service:
+  servicePort: 5433
+  replicas: 1
+  logLevel: info
+  compute: runnable-default
+  resources:
+    requests:
+      cpu: 1000m
+      memory: 1024Mi
+  stack: flash+python:1.0
+  stackSpec:
+# Datasets
+    datasets:
+      - address: dataos://icebase:sales360/customer
+        name: customer
+# Init
+    init:
+      - create table customer as (select * from customer)
+ 
+    schedule:
+      - expression: "*/2 * * * *"
+        sql: INSERT INTO customer BY NAME (select * from customer);
