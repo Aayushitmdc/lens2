@@ -52,6 +52,16 @@ tables:
         description: Age of the customer.
         sql: age
 
+      - name: age_group  #test for logical change
+        type: string
+        sql: CASE
+              WHEN age < 18 THEN 'Under 18'
+              WHEN age BETWEEN 18 AND 35 THEN '18-35'
+              WHEN age BETWEEN 36 AND 50 THEN '36-50'
+              ELSE 'Above 50'
+            END
+        description: "Age group of the customer"
+
       - name: education_level
         type: string
         description: Education level of the customer.
@@ -157,18 +167,6 @@ tables:
         description: Average age of the customers
 
     segments:
-      # - name: minor_age_customer
-      #   public: true      
-      #   sql: "{TABLE}.age_group = 'Under 18'"
-      #   meta:
-      #     secure:
-      #       user_groups: 
-      #         includes:
-      #           - default
-      #         excludes:
-      #           - type_analyst      
-
-
       - name: loyal_customers
         public: true
         sql: "{TABLE}.degree_of_loyalty = 'Hard Core Loyals' " 
