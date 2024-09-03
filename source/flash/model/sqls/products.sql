@@ -5,13 +5,13 @@ SELECT
   productcategory,
   subcategory,
   gender,
-  price,
-  cost,
+  cast(price as double) as price,
+  cast(cost as double) as cost,
   cast(launchdate as timestamp) as launchdate,
   designername,
   color,
   size,
   model
 FROM
- products
+  products
   

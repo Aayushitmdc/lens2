@@ -20,8 +20,9 @@ views:
           - Australia/Sydney
 
     tables:
+
       - join_path: products
-        prefix: false
+        prefix: true
         includes:
           - productname
           - productcategory

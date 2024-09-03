@@ -152,6 +152,13 @@ tables:
                        ELSE 'High Cost Shipping'
                      END
         description: Category of shipping cost based on the amount
+
+
+      # - name: store_id
+      #   type: string
+      #   description: The stock-keeping unit identifier.
+      #   sql: store_id
+     
       
     measures:
       - name: total_transactions
@@ -217,3 +224,19 @@ tables:
       - name: paypal_transactions
         public: true      
         sql: "{TABLE}.payment_method = 'PayPal'"        
+
+
+
+      # - name: total_discount_percentage
+      #   sql: AVG(discount_percentage)
+      #   type: number
+      #   description: Average discount percentage on orders
+
+    # pre_aggregations:
+    #   - name: total_order_amount_recorded
+    #     measures:
+    #       - total_order_amount
+    #     dimensions:
+    #       - payment_method
+    #     refresh_key:
+    #       every: 1 day     

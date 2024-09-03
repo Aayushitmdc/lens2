@@ -8,7 +8,7 @@ workspace: public
 service:
   servicePort: 5433
   replicas: 1
-  logLevel: info
+  logLevel: DEBUG
   compute: runnable-default
   resources:
     requests:
