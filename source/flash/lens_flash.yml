@@ -7,16 +7,12 @@ tags:
 description: A sample lens that contains three entities, a view and a few measures for users to test
 lens:
   compute: runnable-default
-  secrets:
-    - name: repo-secret-r
-      allKeys: true
   source:
     type: flash # minerva, themis and depot
-    name: flash-service03 # flash service name
+    name: flash-service-99 # flash service name
   repo:
-    url: https://bitbucket.org/rubik_/queries/
-    lensBaseDir: queries/mebin_p_moncy/flash-dp/model     # location where lens models are kept in the repo
-    # secretId: lens2_bitbucket_r
+    url: https://github.com/Aayushitmdc/lens2
+    lensBaseDir: lens2/source/flash/model     # location where lens models are kept in the repo
     syncFlags:
       - --ref=main
   api:

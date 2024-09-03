@@ -18,12 +18,29 @@ service:
   stackSpec:
 # Datasets
     datasets:
-      - address: dataos://icebase:sales360/customer
-        name: customer
+      - address: dataos://icebase:sales_360/customer
+        name: f_customer
+      - address: dataos://icebase:sales_360/transactions
+        name: f_transactions
+      - address: dataos://icebase:sales_360/products
+        name: f_products
+      - address: dataos://icebase:sales_360/channel
+        name: f_channel
+
 # Init
     init:
-      - create table customer as (select * from customer)
- 
-    schedule:
-      - expression: "*/2 * * * *"
-        sql: INSERT INTO customer BY NAME (select * from customer);
+
+      - > 
+        create table customer as (select * from f_customer)   
+      - > 
+        create table transactions as (select * from f_transactions)
+      - > 
+        create table products as (select * from f_products)      
+      - > 
+        create table channel as (select * from f_channel)   
+
+
+         
+      # - create table transactions as (select * from transactions)
+      # - create table channel as (select * from channel)
+      # - create table products as (select * from products)

@@ -6,11 +6,8 @@ views:
       export_to_iris: true
       iris:
         timeseries: transactions.transaction_date
-<<<<<<< HEAD:source/flash/model/views/transaction_analysis.yaml
-=======
         refresh:
           every: 24h
->>>>>>> e3874cf2b3d44e397baa9506af5e5295bd60090c:model/views/transaction_analysis.yaml
         available_time_zones:
           - America/Los_Angeles
           - America/Chicago
