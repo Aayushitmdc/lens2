@@ -1,5 +1,9 @@
 version: v1alpha
+<<<<<<< HEAD
 name: "lens-not-test"
+=======
+name: "lens-flash-test-99"
+>>>>>>> 12221d0ba4f37b727b666ad148ccd017ae43bff8
 layer: user
 type: lens
 tags:
