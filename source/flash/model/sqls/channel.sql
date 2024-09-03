@@ -1,4 +1,4 @@
 SELECT
   *
 FROM
-  f_channel
+  channel

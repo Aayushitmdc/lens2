@@ -13,5 +13,5 @@ SELECT
   size,
   model
 FROM
-  f_products
+ products
   
