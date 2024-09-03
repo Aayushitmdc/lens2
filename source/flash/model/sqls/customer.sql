@@ -22,4 +22,4 @@ SELECT
   country,
   zip_code
 FROM
-  f_customer
+  customer

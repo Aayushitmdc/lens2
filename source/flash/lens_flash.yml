@@ -1,5 +1,5 @@
 version: v1alpha
-name: "lens-test"
+name: "lens-not-test"
 layer: user
 type: lens
 tags:

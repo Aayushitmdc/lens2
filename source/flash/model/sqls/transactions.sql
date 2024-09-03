@@ -21,4 +21,4 @@ SELECT
   skuid,
   store_id
 FROM
-  transactions
+  .transactions

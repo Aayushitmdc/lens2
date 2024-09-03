@@ -3,6 +3,8 @@ tables:
     sql: {{ load_sql('channel') }}
     description: Table containing information about channel records.
 
+
+    
     dimensions:       
       - name: store_id
         type: string
@@ -61,7 +63,9 @@ tables:
         description: The nearest offline store to the current store.
         sql: nearest_offline_store
           
+
     measures:
+      
       - name: total_stores
         sql: store_id
         type: count_distinct
