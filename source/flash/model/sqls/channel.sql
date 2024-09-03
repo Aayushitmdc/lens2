@@ -1,4 +1,4 @@
 SELECT
   *
 FROM
-  "icebase"."sales_360".channel
+  f_channel

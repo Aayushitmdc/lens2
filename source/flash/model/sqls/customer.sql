@@ -22,4 +22,4 @@ SELECT
   country,
   zip_code
 FROM
-  "icebase"."sales_360".customer
+  f_customer

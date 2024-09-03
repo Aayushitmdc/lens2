@@ -21,4 +21,4 @@ SELECT
   skuid,
   store_id
 FROM
-  "icebase"."sales_360".transactions
+  transactions

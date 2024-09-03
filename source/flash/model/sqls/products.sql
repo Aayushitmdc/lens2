@@ -13,5 +13,5 @@ SELECT
   size,
   model
 FROM
-  "icebase"."sales_360".products
+  f_products
   
