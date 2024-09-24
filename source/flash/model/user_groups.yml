@@ -1,0 +1,21 @@
+user_groups:
+  - name: default
+    api_scopes:
+      - meta
+      - data
+      - graphql
+      - jobs
+      - source
+    includes: "*"
+  - name: type_analyst
+    api_scopes:
+      - meta
+      - data
+      - graphql
+      - jobs
+      - source
+    includes:
+      - users:id:aayushisolanki
+      - users:id:piyushjoshi
+      - users:id:nandapage
+  

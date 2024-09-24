@@ -1,0 +1,46 @@
+name: flash-service-99
+version: v1
+type: service
+tags:
+  - service
+description: Flash service
+workspace: public
+service:
+  servicePort: 5433
+  replicas: 1
+  logLevel: DEBUG
+  compute: runnable-default
+  resources:
+    requests:
+      cpu: 1000m
+      memory: 1024Mi
+  stack: flash+python:1.0
+  stackSpec:
+# Datasets
+    datasets:
+      - address: dataos://icebase:sales_360/customer
+        name: f_customer
+      - address: dataos://icebase:sales_360/transactions
+        name: f_transactions
+      - address: dataos://icebase:sales_360/products
+        name: f_products
+      - address: dataos://icebase:sales_360/channel
+        name: f_channel
+
+# Init
+    init:
+
+      - > 
+        create table customer as (select * from f_customer)   
+      - > 
+        create table transactions as (select * from f_transactions)
+      - > 
+        create table products as (select * from f_products)      
+      - > 
+        create table channel as (select * from f_channel)   
+
+
+         
+      # - create table transactions as (select * from transactions)
+      # - create table channel as (select * from channel)
+      # - create table products as (select * from products)

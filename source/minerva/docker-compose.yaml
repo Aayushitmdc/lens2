@@ -4,20 +4,26 @@ x-lens2-environment: &lens2-environment
   # DataOS
   DATAOS_FQDN: liberal-donkey.dataos.app  
   # Overview
+<<<<<<< HEAD:docker-compose.yaml
   LENS2_NAME: retail360np
   LENS2_DESCRIPTION: "Ecommerce use case on Adventureworks sales data"
+=======
+  LENS2_NAME: sales_analysis
+  LENS2_DESCRIPTION: "Retail"
+>>>>>>> c6cbd85e990d5863d3a54c538e0c4b0bc8d5062e:source/minerva/docker-compose.yaml
   LENS2_TAGS: "sales and customer insights"
-  LENS2_AUTHORS: "aayushisolanki, iamgroot"
+  LENS2_AUTHORS: nandapage
   LENS2_SOURCE_TYPE: minerva
   LENS2_SOURCE_NAME: system
   LENS2_SOURCE_CATALOG_NAME: icebase
   DATAOS_RUN_AS_APIKEY: dG9rZW5fd3JvbmdseV9pbmZvcm1hbGx5X3dvcnRoeV9odW1wYmFjay5lZjcyMjBkZC0wZWI0LTQ5ZmYtYjU0OC0yMDI1N2NjMjBjMGU=
     # Log
   LENS2_LOG_LEVEL: error
-  CACHE_LOG_LEVEL: "error"
+  CACHE_LOG_LEVEL: error
   # Operation
-  LENS2_DEV_MODE: true   
-  LENS2_REFRESH_WORKER: true
+  
+  LENS2_DEV_MODE: "true"  
+  LENS2_REFRESH_WORKER: "true"
   LENS2_SCHEMA_PATH: model
   LENS2_PG_SQL_PORT: 5432
   # CUBESTORE_DATA_DIR: "/var/work/.store"
