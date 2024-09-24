@@ -2,10 +2,10 @@ tables:
   - name: transactions
     sql: {{ load_sql('transactions') }}
     description: Table containing information about customer records.
-    joins:
-      - name: products
-        relationship: many_to_one
-        sql: "{TABLE.skuid}= {products.skuid}"   
+    # joins:
+    #   - name: products
+    #     relationship: many_to_one
+    #     sql: "{TABLE.skuid}= {products.skuid}"   
 
       # - name: channel
       #   relationship: many_to_one
@@ -164,8 +164,8 @@ tables:
       - name: total_transactions
         sql: transaction_id
         type: count_distinct
-        description: Total number of transactions
-
+        description: Total number of 
+        
       - name: total_revenue
         sql: SUM(transaction_amount)
         type: number

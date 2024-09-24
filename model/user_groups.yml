@@ -6,7 +6,9 @@ user_groups:
       - graphql
       - jobs
       - source
-    includes: "*"
+    includes: 
+      - users:id:shraddhaade
+      - users:id:iamgroot
   - name: type_analyst
     api_scopes:
       - meta
