@@ -18,5 +18,6 @@ views:
           - successful_transactions #dimension
           - total_transactions  #measure
           - transaction_date  #time dimension
+          - transaction_id #for the measuret that involves this dimension
 
  

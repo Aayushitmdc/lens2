@@ -3,7 +3,7 @@ tables:
   - name: customer
     sql: {{ load_sql('customer') }}
     description: Table containing information about customer records.
-    public: false
+    public: true
     meta:
       export_to_board: true
     
