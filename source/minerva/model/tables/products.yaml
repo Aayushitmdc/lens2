@@ -2,8 +2,6 @@ tables:
   - name: products
     sql: {{ load_sql('products') }}
     description: Table containing information about customer records.
-
-
     
     dimensions:
        

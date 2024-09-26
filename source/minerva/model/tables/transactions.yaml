@@ -5,11 +5,7 @@ tables:
     joins:
       - name: products
         relationship: many_to_one
-        sql: "{TABLE.skuid}= {products.skuid}"   
-
-      # - name: channel
-      #   relationship: many_to_one
-      #   sql: "{TABLE.store_id}= {channel.store_id}"           
+        sql: "{TABLE.skuid}= {products.skuid}"           
 
     dimensions:
       - name: transaction_id
@@ -175,6 +171,11 @@ tables:
         sql: AVG(transaction_amount)
         type: number
         description: Average amount per transaction
+      
+      - name: max_transaction_amount
+        sql: max(transaction_amount)
+        type: number
+        description: Max transaction amount
 
       - name: total_discounted_amount
         sql: SUM(discounted_amount)
@@ -223,20 +224,12 @@ tables:
     segments:
       - name: paypal_transactions
         public: true      
-        sql: "{TABLE}.payment_method = 'PayPal'"        
+        sql: "{TABLE}.payment_method = 'PayPal'" 
 
+      - name: high_value_transactions
+        public: true
+        sql: "{TABLE}.transaction_amount >10000"
 
-
-      # - name: total_discount_percentage
-      #   sql: AVG(discount_percentage)
-      #   type: number
-      #   description: Average discount percentage on orders
-
-    # pre_aggregations:
-    #   - name: total_order_amount_recorded
-    #     measures:
-    #       - total_order_amount
-    #     dimensions:
-    #       - payment_method
-    #     refresh_key:
-    #       every: 1 day     
+      - name: high_value_credit_transactions
+        public: true
+        sql: "{TABLE}.transaction_amount >10000 and  {TABLE}.payment_method='Credit Card'"

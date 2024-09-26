@@ -1,14 +1,5 @@
 user_groups:
-  - name: default
-    api_scopes:
-      - meta
-      - data
-      - graphql
-      - jobs
-      - source
-    includes: 
-      - users:id:shraddhaade
-      - users:id:iamgroot
+  
   - name: type_analyst
     api_scopes:
       - meta
@@ -19,4 +10,13 @@ user_groups:
     includes:
       - users:id:aayushisolanki
       - users:id:piyushjoshi
+      
+  - name: default
+    api_scopes:
+      - meta
+      - data
+      - graphql
+      - jobs
+      - source
+    includes: "*"
   

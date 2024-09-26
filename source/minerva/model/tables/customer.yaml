@@ -3,11 +3,14 @@ tables:
   - name: customer
     sql: {{ load_sql('customer') }}
     description: Table containing information about customer records.
+    public: false
+    meta:
+      export_to_board: true
     
-    # joins:
-    #   - name: transactions
-    #     relationship: one_to_many
-    #     sql: "{TABLE.customer_id} = {transaction.customer_id}"
+    joins:
+      - name: transactions
+        relationship: one_to_many
+        sql: "{TABLE.customer_id} = {transactions.customer_id}"
 
     dimensions:
       - name: customer_id
@@ -52,16 +55,6 @@ tables:
         description: Age of the customer.
         sql: age
 
-      - name: age_group  #test for logical change
-        type: string
-        sql: CASE
-              WHEN age < 18 THEN 'Under 18'
-              WHEN age BETWEEN 18 AND 35 THEN '18-35'
-              WHEN age BETWEEN 36 AND 50 THEN '36-50'
-              ELSE 'Above 50'
-            END
-        description: "Age group of the customer"
-
       - name: education_level
         type: string
         description: Education level of the customer.
@@ -88,17 +81,16 @@ tables:
         sql: occupation
 
       - name: annual_income
-        type: number
+        type: string
         description: Annual income of the customer.
         sql: annual_income
-        # meta:
-        #   secure:
-        #     func: redact
-        #     user_groups:
-        #       includes: 
-        #         - type analyst # secure for everyone
-        #       excludes:
-        #         - default  # except default        
+        meta:
+          secure:
+            func: redact
+            user_groups:
+              includes: "*" # secure for everyone
+              excludes:
+                - type_analyst   # except default        
 
       - name: hobbies
         type: string
@@ -168,16 +160,16 @@ tables:
         description: Average age of the customers
 
     segments:
-      - name: minor_age_customer
-        public: true      
-        sql: "{TABLE}.age_group = 'Under 18'"
-        meta:
-          secure:
-            user_groups: 
-              includes:
-                - type_analyst
-              excludes:
-                - default   
+      # - name: minor_age_customer
+      #   public: true      
+      #   sql: "{TABLE}.age_group = 'Under 18'"
+      #   meta:
+      #     secure:
+      #       user_groups: 
+      #         includes:
+      #           - default
+      #         excludes:
+      #           - type_analyst      
 
 
       - name: loyal_customers
@@ -191,7 +183,9 @@ tables:
               excludes:
                 - default        
 
-  
+      - name: young_female_customers
+        public: true
+        sql: "{TABLE}.gender='FEMALE' and {TABLE}.age <30 and {TABLE}.age>20"
 
     
       

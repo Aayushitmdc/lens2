@@ -1,0 +1,59 @@
+views:
+  - name: transaction_success_rate
+    description: Percentage of successful transactions
+    public: true
+    meta:
+      tags:
+        - DPDomain.Sales
+        - DPUsecase.Performance Analysis
+        - DPTier.Consumer Aligned
+      metric:
+        expression: "*/5  * * * *"
+        timezone: "UTC"
+        window: "day"
+    tables:
+      - join_path: transactions
+        prefix: false
+        includes:
+          - successful_transactions #dimension
+          - total_transactions  #measure
+          - transaction_date  #time dimension
+
+  - name: transaction_avg_value
+    description: Average value per transaction
+    public: true
+    meta:
+      tags:
+        - DPDomain.Transaction
+        - DPUsecase.Monetary Value Analysis
+        - DPTier.Business Aligned
+      metric:
+        expression: "sum(total_amount) / count(transaction_id)"
+        timezone: "UTC"
+        window: "day"
+    tables:
+      - join_path: transactions
+        prefix: false
+        includes:
+          - transaction_id
+          - total_amount
+          - transaction_date
+
+  - name: qtd_total_transactions
+    description: Quarter-to-Date total transactions
+    public: true
+    meta:
+      tags:
+        - DPDomain.Transaction
+        - DPUsecase.Volume Tracking
+        - DPTier.Business Aligned
+      metric:
+        expression: "count(transaction_id)"
+        timezone: "UTC"
+        window: "quarter"
+    tables:
+      - join_path: transactions
+        prefix: false
+        includes:
+          - transaction_id
+          - transaction_date

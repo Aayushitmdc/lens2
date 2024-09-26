@@ -1,5 +1,5 @@
 version: v1alpha
-name: "lens-test-flash"
+name: "sales-analysis"
 layer: user
 type: lens
 tags:
@@ -11,11 +11,12 @@ lens:
     - name: repo-secret-r
       allKeys: true
   source:
-    type: flash # minerva, themis and depot
-    name: flash-service03 # flash service name
+    type: minerva
+    name: miniature
+    catalog: icebase
   repo:
-    url: https://bitbucket.org/rubik_/queries/
-    lensBaseDir: queries/mebin_p_moncy/flash-dp/model     # location where lens models are kept in the repo
+    url: https://github.com/Aayushitmdc/lens2/
+    lensBaseDir: lens2/source/minerva/model     # location where lens models are kept in the repo
     # secretId: lens2_bitbucket_r
     syncFlags:
       - --ref=main
@@ -25,7 +26,7 @@ lens:
     envs:
       LENS2_SCHEDULED_REFRESH_TIMEZONES: "UTC,America/Vancouver,America/Toronto"
       LENS2_SOURCE_WORKSPACE_NAME: public
-      LENS2_SOURCE_FLASH_PORT: 5433
+      # LENS2_SOURCE_FLASH_PORT: 5433
     resources: # optional
       requests:
         cpu: 100m
@@ -40,7 +41,7 @@ lens:
     envs:
       LENS2_SCHEDULED_REFRESH_TIMEZONES: "UTC,America/Vancouver,America/Toronto"
       LENS2_SOURCE_WORKSPACE_NAME: public
-      LENS2_SOURCE_FLASH_PORT: 5433
+      # LENS2_SOURCE_FLASH_PORT: 5433
     resources: # optional
       requests:
         cpu: 100m
@@ -54,7 +55,7 @@ lens:
     envs:
       LENS2_SCHEDULED_REFRESH_TIMEZONES: "UTC,America/Vancouver,America/Toronto"
       LENS2_SOURCE_WORKSPACE_NAME: public
-      LENS2_SOURCE_FLASH_PORT: 5433
+      # LENS2_SOURCE_FLASH_PORT: 5433
     resources: # optional
       requests:
         cpu: 100m
@@ -68,7 +69,7 @@ lens:
     envs:
       LENS2_SCHEDULED_REFRESH_TIMEZONES: "UTC,America/Vancouver,America/Toronto"
       LENS2_SOURCE_WORKSPACE_NAME: public
-      LENS2_SOURCE_FLASH_PORT: 5433
+      # LENS2_SOURCE_FLASH_PORT: 5433
     resources: # optional
       requests:
         cpu: 100m

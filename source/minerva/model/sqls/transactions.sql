@@ -19,6 +19,6 @@ SELECT
   shipping_method,
   order_status,
   skuid,
-  store_id
+  -- store_id
 FROM
   "icebase"."sales_360".transactions
