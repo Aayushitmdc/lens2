@@ -77,3 +77,6 @@ lens:
       limits:
         cpu: 6000m
         memory: 6048Mi
+
+  metric:
+    loglevel: info
