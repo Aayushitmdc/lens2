@@ -1,0 +1,20 @@
+user_groups:
+  - name: reader
+    api_scopes:
+      - meta
+      - data
+      - graphql
+      - jobs
+      - source
+    includes: 
+      - users:id:iamgroot
+
+  - name: analyst
+    api_scopes:
+      - meta
+      - data
+      - graphql
+      - jobs
+      - source
+    includes: 
+      - users:id:aayushisolanki
