@@ -73,11 +73,11 @@ tables:
 
     segments:
       - name: order_date_segment
-        sql: "{TABLE}.order_date BETWEEN TIMESTAMP 2003-01-13 AND 2003-01-13"
+        sql: "{TABLE}.order_date BETWEEN TIMESTAMP '2003-01-13' AND '2003-12-13'"
 
       - name: order_date_segment_not_between
-        sql: "{TABLE}.order_date NOT BETWEEN TIMESTAMP 2003-01-13 AND 2003-01-13" #no error
+        sql: "{TABLE}.order_date NOT BETWEEN TIMESTAMP '2003-01-13' AND '2003-12-13'" #no error
 
-      - name: current_year_sales
+      - name: current_year_sales  #to undestand with the help of kanak
         sql: "year({TABLE}.load_date) = year(current_date)"
         description: This segments filters current year records.

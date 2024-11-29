@@ -8,7 +8,7 @@ description: A sample lens that contains three entities, a view and a few measur
 lens:
   compute: runnable-default
   secrets:
-    - name: repo-secret-r
+    - name: githubr
       allKeys: true
   source:
     type: minerva
@@ -16,7 +16,7 @@ lens:
     catalog: icebase
   repo:
     url: https://github.com/Aayushitmdc/lens2/
-    lensBaseDir: lens2/source/minerva/model     # location where lens models are kept in the repo
+    lensBaseDir: lens2/lens_segment_testing01/model     # location where lens models are kept in the repo
     # secretId: lens2_bitbucket_r
     syncFlags:
       - --ref=main

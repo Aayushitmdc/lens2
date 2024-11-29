@@ -81,7 +81,7 @@ tables:
         sql: "{TABLE}.gender = 'F'"
 
       - name: annual_income_range
-        sql: "{TABLE}.annual_income BETWEEN '100000' AND '200000'"
+        sql: "{TABLE}.annual_customer_income BETWEEN '100000' AND '200000'"
         meta:
          secure:
            user_groups:
@@ -91,12 +91,16 @@ tables:
                - analyst
 
       - name: occupation_segment
-        sql: "{TABLE}.occupation in ('Professional', Skilled Manual, Management)"
+        sql: "{TABLE}.occupation = 'Professional'"
+
+      - name: occupation_segment_not_in
+        sql: "{TABLE}.occupation in ('Professional', 'Skilled Manual', 'Management')"
 
 
       - name: occupation_segment_not_in
-        sql: "{TABLE}.occupation not in ('Professional', Skilled Manual, Management)"
+        sql: "{TABLE}.occupation not in ('Professional', 'Skilled Manual', 'Management')"
 
-      - name: and_or
-        sql: "{TABLE}.occupation not in ('Professional', Skilled Manual, Management)"
+
+      - name: occupation_segment
+        sql: "{TABLE}.occupation in ('Professional', 'Skilled Manual', 'Management')"
 
