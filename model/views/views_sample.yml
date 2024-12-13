@@ -1,0 +1,22 @@
+views:
+  - name: view_name
+    description: "purpose of the view"
+    public: true
+    #use meta property to define whether you want to export a view to IRIS board
+    meta:
+      #set this property to true if you want to export the view to IRIS board
+      export_to_board: true
+      board:
+        #provide the time dimension to be used for displaying time-series
+        timeseries: table_name.dimension_name 
+    tables:
+        # table name to be included in the view
+      - join_path: table1
+        # Set to true to add the table name as prefix to measure/dimension
+        prefix: true
+        # To include all or specific measures and dimensions
+        includes: "*" #'*' will include all measure and dimensions of the table
+        # To exclude specific measures and dimensions
+        excludes:
+          - measure
+          - dimension

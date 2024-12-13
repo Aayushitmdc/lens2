@@ -1,0 +1,60 @@
+version: v1alpha
+name: "sales-intelligence"
+layer: user
+type: lens
+tags:
+  - lens
+description: sales analysis 
+lens:
+  compute: runnable-default
+  secrets:
+    - name: sales360
+      allKeys: true
+  source:
+    type: minerva
+    name: system
+    catalog: icebase
+  repo:
+    url: https://github.com/Aayushitmdc/lens2
+    lensBaseDir: /lens2/model
+    syncFlags:
+      - --ref=refactor-demos
+  api:   # optional
+    replicas: 1 # optional
+    logLevel: info  # optional
+    resources: # optional
+      requests:
+        cpu: 100m
+        memory: 256Mi
+      limits:
+        cpu: 2000m
+        memory: 2048Mi
+  worker: # optional
+    replicas: 1 # optional
+    logLevel: info  # optional
+    resources: # optional
+      requests:
+        cpu: 100m
+        memory: 256Mi
+      limits:
+        cpu: 3000m
+        memory: 4048Mi
+  router: # optional
+    logLevel: info  # optional
+    resources: # optional
+      requests:
+        cpu: 100m
+        memory: 256Mi
+      limits:
+        cpu: 3000m
+        memory: 4048Mi
+  iris:
+    logLevel: info
+    resources:
+      requests:
+        cpu: 100m
+        memory: 256Mi
+      limits:
+        cpu: 4000m
+        memory: 5240Mi
+  
